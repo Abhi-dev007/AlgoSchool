@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quiz</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body >
+	<div class="container">
+		<div class="m-3 p-3 justify-content-center ">
+            <form action="/mcq" method="POST" >
+                <h1 style="text-align: center">Uploading Questions</h1>
+                <div class="form-group">
+                    <label>Topic</label>
+                    <input type="text" class="form-control" placeholder="topic" name="topic" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Question</label>
+                    <input type="text" class="form-control" placeholder="ques" name="ques" required>
+                </div>
+
+                <div class="form-group">
+                    <label>option1</label>
+                    <input type="text" class="form-control" placeholder="option1" name="option1" required>
+                    <label>option2</label>
+                    <input type="text" class="form-control" placeholder="option2" name="option2" required>
+                    <label>option3</label>
+                    <input type="text" class="form-control" placeholder="option3" name="option3" required>
+                    <label>option4</label>
+                    <input type="text" class="form-control" placeholder="option4" name="option4" required>        
+                </div>
+
+                <div class="form-group">
+                    <label>correct-option</label>
+                    <input type="number" class="form-control" placeholder="option-number" name="correctoption" required>
+                </div>
+                <div class="form-group">
+                    <label>Wordly Explanation</label>
+                    <input type="text" class="form-control" placeholder="Explanation" name="expl">
+                </div>
+                <div class="form-group">
+                    <label>link1</label>
+                    <input type="text" class="form-control" placeholder="link1" name="link1" >
+                </div>
+                <div class="form-group">
+                    <label>link2</label>
+                    <input type="text" class="form-control" placeholder="link2" name="link2" >
+                </div>
+                <div class="form-group">
+                    <label>link3</label>
+                    <input type="text" class="form-control" placeholder="link3" name="link3" >
+                </div>
+                <div class="form-group m-2">
+                    <!-- <input type="submit" value="submit"> -->
+                    <button id="sub" class="btn btn-primary btn-block">Submit</button>
+                </div>
+
+            </form>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+	<!-- <script type="text/javascript" src="quiz.js"></script> -->
+</body>
+</html>

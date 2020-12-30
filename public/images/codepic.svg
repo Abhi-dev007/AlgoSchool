@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1030 1330" style="enable-background:new 0 0 1030 1330;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#CC0033;}
+	.st1{font-family:'Consolas';}
+	.st2{font-size:54.7577px;}
+	.st3{fill:#FF9900;}
+	.st4{fill:#0033CC;}
+	.st5{fill:#009933;}
+	.st6{letter-spacing:9.88;}
+	.st7{fill:#3399CC;}
+	.st8{fill:#9933CC;}
+</style>
+<text transform="matrix(0.9106 0 0 1 43.3655 47.52)" class="st0 st1 st2">#include</text>
+<text transform="matrix(0.9106 0 0 1 262.6883 47.52)" class="st1 st2"> </text>
+<text transform="matrix(0.9106 0 0 1 290.1014 47.52)" class="st3 st1 st2">&lt;iostream&gt;</text>
+<text transform="matrix(0.9106 0 0 1 43.3655 113.229)" class="st0 st1 st2">#include </text>
+<text transform="matrix(0.9106 0 0 1 290.1014 113.229)" class="st3 st1 st2">&lt;rainy_day&gt;</text>
+<text transform="matrix(0.9106 0 0 1 43.3655 178.939)" class="st0 st1 st2">using namespace</text>
+<text transform="matrix(0.9106 0 0 1 454.5862 178.939)" class="st1 st2"> std;</text>
+<text transform="matrix(0.9106 0 0 1 43.3655 310.3569)" class="st4 st1 st2">int</text>
+<text transform="matrix(0.9106 0 0 1 125.6077 310.3569)" class="st1 st2"> </text>
+<text transform="matrix(0.9106 0 0 1 153.0218 310.3569)" class="st5 st1 st2">main</text>
+<text transform="matrix(0.9106 0 0 1 262.6883 310.3569)" class="st1 st2">() </text>
+<text transform="matrix(0.9106 0 0 1 43.3655 376.0659)" class="st1 st2">{</text>
+<text transform="matrix(0.9106 0 0 1 43.3655 441.7749)" class="st1 st2 st6"> </text>
+<text transform="matrix(0.9106 0 0 1 80.7635 441.7749)" class="st7 st1 st2">printf</text>
+<text transform="matrix(0.9106 0 0 1 245.2464 441.7749)" class="st1 st2">(</text>
+<text transform="matrix(0.9106 0 0 1 272.6609 441.7749)" class="st3 st1 st2">&quot;It is raining outside.&quot;</text>
+<text transform="matrix(0.9106 0 0 1 930.618 441.7749)" class="st1 st2">);</text>
+<text transform="matrix(0.9106 0 0 1 43.3655 507.4849)" class="st4 st1 st2 st6"> </text>
+<text transform="matrix(0.9106 0 0 1 80.7635 507.4849)" class="st4 st1 st2">bool</text>
+<text transform="matrix(0.9106 0 0 1 190.4188 507.4849)" class="st1 st2"> raining_outside = </text>
+<text transform="matrix(0.9106 0 0 1 711.2947 507.4849)" class="st8 st1 st2">true</text>
+<text transform="matrix(0.9106 0 0 1 820.9617 507.4849)" class="st1 st2">;</text>
+<text transform="matrix(0.9106 0 0 1 43.3655 638.9019)" class="st1 st2 st6"> </text>
+<text transform="matrix(0.9106 0 0 1 80.7635 638.9019)" class="st0 st1 st2">if</text>
+<text transform="matrix(0.9106 0 0 1 135.5911 638.9019)" class="st1 st2">(you.</text>
+<text transform="matrix(0.9106 0 0 1 272.6609 638.9019)" class="st7 st1 st2">go_outside</text>
+<text transform="matrix(0.9106 0 0 1 546.8113 638.9019)" class="st1 st2">() == </text>
+<text transform="matrix(0.9106 0 0 1 711.2947 638.9019)" class="st8 st1 st2">true</text>
+<text transform="matrix(0.9106 0 0 1 820.9617 638.9019)" class="st1 st2">) </text>
+<text transform="matrix(0.9106 0 0 1 43.3655 704.6113)" class="st1 st2 st6"> </text>
+<text transform="matrix(0.9106 0 0 1 80.7635 704.6113)" class="st1 st2">{</text>
+<text transform="matrix(0.9106 0 0 1 43.3655 770.3193)" class="st1 st2 st6">  </text>
+<text transform="matrix(0.9106 0 0 1 118.16 770.3193)" class="st1 st2">you.</text>
+<text transform="matrix(0.9106 0 0 1 227.8152 770.3193)" class="st7 st1 st2">use_umbrella</text>
+<text transform="matrix(0.9106 0 0 1 556.7938 770.3193)" class="st1 st2">();</text>
+<text transform="matrix(0.9106 0 0 1 43.3655 836.0293)" class="st1 st2 st6"> </text>
+<text transform="matrix(0.9106 0 0 1 80.7635 836.0293)" class="st1 st2">}</text>
+<text transform="matrix(0.9106 0 0 1 43.3655 901.7383)" class="st0 st1 st2 st6"> </text>
+<text transform="matrix(0.9106 0 0 1 80.7635 901.7383)" class="st0 st1 st2">else</text>
+<text transform="matrix(0.9106 0 0 1 43.3655 967.4473)" class="st1 st2 st6"> </text>
+<text transform="matrix(0.9106 0 0 1 80.7635 967.4473)" class="st1 st2">{</text>
+<text transform="matrix(0.9106 0 0 1 43.3655 1033.1563)" class="st1 st2 st6">  </text>
+<text transform="matrix(0.9106 0 0 1 118.16 1033.1563)" class="st1 st2">you.</text>
+<text transform="matrix(0.9106 0 0 1 227.8152 1033.1563)" class="st7 st1 st2">enjoy</text>
+<text transform="matrix(0.9106 0 0 1 364.8958 1033.1563)" class="st1 st2">();</text>
+<text transform="matrix(0.9106 0 0 1 43.3655 1098.8672)" class="st1 st2 st6"> </text>
+<text transform="matrix(0.9106 0 0 1 80.7635 1098.8672)" class="st1 st2">}</text>
+<text transform="matrix(0.9106 0 0 1 43.3655 1230.2842)" class="st1 st2 st6"> </text>
+<text transform="matrix(0.9106 0 0 1 80.7635 1230.2842)" class="st0 st1 st2">return</text>
+<text transform="matrix(0.9106 0 0 1 245.2464 1230.2842)" class="st1 st2"> 0;</text>
+<text transform="matrix(0.9106 0 0 1 43.3655 1295.9941)" class="st1 st2">}</text>
+</svg>

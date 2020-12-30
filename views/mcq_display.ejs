@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MCQs</title>
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <!-- font style -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap" rel="stylesheet">
+    <!--bootsrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="images/logo.svg" type="image/x-icon"/>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,300;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+        
+    <!--icons-->
+    <script src="https://kit.fontawesome.com/f3b464051f.js" crossorigin="anonymous"></script> 
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <style>
+        body{
+            background: #283c86;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to left, #6daf6e, #738eec);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to left, #6daf6e, #738eec); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            font-family: 'Raleway', sans-serif;
+        }
+        .correct{
+            border: 3px solid limegreen;
+            color: limegreen;
+        }
+        .incorrect{
+            border: 3px solid red;
+            color: red;
+        }
+        .topicx{
+            border-bottom: 2px solid lightblue;
+            margin: 2px;
+            padding: 2px;
+        }
+        
+        .ques{
+            border: 1px solid black;
+            margin: 8px;
+            padding: 5px 10px 5px 10px;
+            border-radius: 1%;
+        }
+        .links:hover{
+            text-decoration: underline;
+        }
+        .fa-check-circle{
+            padding-left: 25px;
+            color: green;
+        }
+        .fa-times-circle{
+            padding-left: 25px;
+            color: red;
+        }
+        a{
+            color: white;
+        }
+    </style>
+    <div class="container mt-5">
+        <%- include('partials/flash.ejs')%>  
+    </div> 
+</head>
+<body>
+     
+    <!-- NAVABAR -->
+    <div>
+    <nav class="navbar navbar-expand-lg fixed-top py-2 py-lg-0 navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand ml-3" href="#">
+            <img src="images/logo.svg" class="pb-1" alt="Logo" style="width:35px; height:35px;">
+            <span style="color: rgb(0,191,255);">A</span>lgo<span style="color:rgb(0,255,127);">S</span>chool
+          </a>
+          <button class="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+  
+          <section class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="navbar-nav">
+                <a class="nav-link" href="/">Home</a>
+                <a class="nav-link" href="/about">About</a>
+                <a class="nav-link" href="/coursestructure">Course Structure</a>
+            </div>
+            <div class="navbar-nav ml-auto">
+                <a class="nav-link" href="/mcq_display">Test Yourself!</a>
+                <% if(!currentUser) {%>
+                    <a class="nav-link" href="/login">Login</a>
+                    <a class="nav-link" href="/register">Register</a>
+                    <% } else {%>
+                    <span class="nav-link" style="color: rgb(0,191,255);"><%=currentUser.username%></span>
+                    <a class="nav-link" href="/logout">Logout</a>
+                    <% } %>
+                
+            </div>
+          </section>
+        </div>
+      </nav>
+    </div>
+          
+
+    <div class="container mt-3 pt-2">
+        <h2>Multiple Choice Questions (Topic-wise)</h2>
+    <% mcq.forEach(function(mcq) {%>
+        <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8 p-3 topicx">
+            <div class="topic">
+                <h3><%=mcq.topic%></h3>
+            </div>
+            <div class="question ml-2 d-none">
+                <%mcq.question.forEach(function(q){ %>
+                    <div id="<%=q._id%>" class="ques">
+                        <h5>Q. <%=q.ques%></h5>
+                        <div id="<%=q._id%>op1" style='padding: 3px;'>
+                            <label for="option-choice" style=' padding: 1px; font-size: 1rem;'>
+                                <input type="radio" name="<%=q._id%>" id="<%=q._id%>1" value="1" style='transform: scale(1.6); margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+                                <%=q.options.op1%></label>
+                                <i id="<%=q._id%>op1i"></i>
+                        </div>
+                        <hr/>
+                        <div id="<%=q._id%>op2" style='padding: 3px;'>
+                            <label for="option-choice" style=' padding: 1px; font-size: 1rem;'>
+                                <input type="radio" name="<%=q._id%>" id="<%=q._id%>2" value="2" style='transform: scale(1.6); margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+                                <%=q.options.op2%></label>
+                                <i id="<%=q._id%>op2i"></i>
+                        </div>
+                        <hr/>
+                        <div id="<%=q._id%>op3" style='padding: 3px;'>
+                            <label for="option-choice" style=' padding: 1px; font-size: 1rem;'>
+                                <input type="radio" name="<%=q._id%>" id="<%=q._id%>3" value="3" style='transform: scale(1.6); margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+                                <%=q.options.op3%></label>
+                                <i id="<%=q._id%>op3i"></i>
+                        </div>
+                        <hr/>
+                        <div id="<%=q._id%>op4" style='padding: 3px;'>
+                            <label for="option-choice" style=' padding: 1px; font-size: 1rem;'>
+                                <input type="radio" name="<%=q._id%>" id="<%=q._id%>4" value="4" style='transform: scale(1.6); margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+                                <%=q.options.op4%></label>
+                                <i id="<%=q._id%>op4i" class=""></i>
+                        </div>
+                        <hr/>
+                        <div id="<%=q._id%>links" class="links">
+                            <p style='color:black'>Not able to solve! see here</p>
+                            <div id="<%=q._id%>l" class="d-none m-2">
+                                <p style='color:white; text-decoration: none;'><%=q.pdfs.expl%></p>
+                                <a href="<%=q.pdfs.link1%>">Link1</a>
+                                <a href="<%=q.pdfs.link2%>">Link2</a>
+                                <a href="<%=q.pdfs.link3%>">Link3</a><br/>
+                            </div>
+                        </div>
+                        <script>
+                            $("#<%=q._id%>links").on("click",function(){
+                                $("#<%=q._id%>l").toggleClass("d-none");
+                                if("<%=q.pdfs.link1%>"=="") $("a",this)[0].remove();
+                                if("<%=q.pdfs.link2%>"=="") $("a",this)[1].remove();
+                                if("<%=q.pdfs.link3%>"=="") $("a",this)[2].remove();
+                            })
+
+                            $("#<%=q._id%>1").on("click",function(){
+                                if("<%=q.correct%>"=="1"){
+                                    $("#<%=q._id%>op1").addClass("correct");
+                                    $("#<%=q._id%>op1i").addClass("fas");
+                                    $("#<%=q._id%>op1i").addClass("fa-check-circle");
+                                }
+                                else{
+                                    $("#<%=q._id%>op1").addClass("incorrect");
+                                    $("#<%=q._id%>op1i").addClass("fas");
+                                    $("#<%=q._id%>op1i").addClass("fa-times-circle");
+                                }
+                            })
+                            $("#<%=q._id%>2").on("click",function(){
+                                if("<%=q.correct%>"=="2"){
+                                    $("#<%=q._id%>op2").addClass("correct");
+                                    $("#<%=q._id%>op2i").addClass("fas");
+                                    $("#<%=q._id%>op2i").addClass("fa-check-circle");
+                                }
+                                else{
+                                    $("#<%=q._id%>op2").addClass("incorrect");
+                                    $("#<%=q._id%>op2i").addClass("fas");
+                                    $("#<%=q._id%>op2i").addClass("fa-times-circle");
+                                }
+                            })
+                            $("#<%=q._id%>3").on("click",function(){
+                                if("<%=q.correct%>"=="3"){
+                                    $("#<%=q._id%>op3").addClass("correct");
+                                    $("#<%=q._id%>op3i").addClass("fas");
+                                    $("#<%=q._id%>op3i").addClass("fa-check-circle");
+                                }
+                                else{
+                                    $("#<%=q._id%>op3").addClass("incorrect");
+                                    $("#<%=q._id%>op3i").addClass("fas");
+                                    $("#<%=q._id%>op3i").addClass("fa-times-circle");
+                                }
+                            })
+                            $("#<%=q._id%>4").on("click",function(){
+                                if("<%=q.correct%>"=="4"){
+                                    $("#<%=q._id%>op4").addClass("correct");
+                                    $("#<%=q._id%>op4i").addClass("fas");
+                                    $("#<%=q._id%>op4i").addClass("fa-check-circle");
+                                }
+                                else{
+                                    $("#<%=q._id%>op4").addClass("incorrect");
+                                    $("#<%=q._id%>op4i").addClass("fas");
+                                    $("#<%=q._id%>op4i").addClass("fa-times-circle");
+                                }
+                            })
+                        </script>
+                    </div>
+                <%})%>
+                
+            </div>
+        </div>
+        </div>
+<% })%>
+    </div>
+
+    <script type="text/javascript">
+        var topic=document.querySelectorAll(".topic");
+        var question=document.querySelectorAll(".question");
+        console.log(topic.length);
+        for(let i=0;i<topic.length;i++){
+            topic[i].addEventListener("click",function(){
+                question[i].classList.toggle("d-none");
+            })
+        }        
+    </script>
+
+    
+</body>
+</html>
