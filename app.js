@@ -22,7 +22,7 @@ app.use(express.static("public"));
 app.use(express.static("uploads"));
 
 const MongoDBStore = require("connect-mongo")(session);
-const dbUrl='mongodb://localhost:27017/authdemo2'||'mongodb+srv://abhi-dev007:abhi@2001@cluster0.90pcq.mongodb.net/Algoschool1?retryWrites=true&w=majority';
+const dbUrl='mongodb+srv://abhi-dev007:abhi@2001@cluster0.90pcq.mongodb.net/Algoschool1?retryWrites=true&w=majority';
 Mongoose.connect(dbUrl,{
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -32,7 +32,7 @@ Mongoose.connect(dbUrl,{
         console.log("mongo open")
     })
     .catch(err =>{
-        console.log("Oh no! mogo connection error!!")
+        console.log("Oh no! mongo connection error!!")
         console.log(err)
     })
 
